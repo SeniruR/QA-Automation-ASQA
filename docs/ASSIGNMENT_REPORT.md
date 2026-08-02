@@ -1,8 +1,8 @@
 # UCSC Practical Take-Home Assignment – QA Automation
 ## OrangeHRM Open Source Demo
 
-**Student:** [Your Name]  
-**Student ID:** [Your ID]  
+**Student:** R.P.S.R. Ranasinghe  
+**Student ID:** 22020782  
 **Website:** [OrangeHRM Demo Login](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login)  
 **Stack:** Java 17, Selenium WebDriver 4, TestNG, Maven, Page Object Model  
 
@@ -214,4 +214,4 @@ Maintain incremental commits (framework → pages → tests → docs → debug f
 ---
 
 ## How to convert this to PDF
-Open this Markdown in Word / Google Docs / VS Code Markdown PDF and export as PDF. Replace `[Your Name]` / `[Your ID]` and insert manual screenshots before submission.
+Open this Markdown in Word / Google Docs / VS Code Markdown PDF and export as PDF. Insert manual screenshots before submission.

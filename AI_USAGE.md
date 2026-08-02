@@ -18,9 +18,9 @@ This file documents how AI assistance (Cursor / Composer) was used for the UCSC 
 3. Manually executed sample scenarios on the live site and captured screenshots for the PDF
 4. Ran `mvn clean test` locally, fixed any environment-specific issues (ChromeDriver, waits)
 5. Performed the intentional debugging challenge (wrong locator → diagnose → fix) and can explain it in viva/video
-6. Replaced placeholders (`[Your Name]`, `[Your ID]`) and exported the final PDF
+6. Confirmed student details (R.P.S.R. Ranasinghe / 22020782) and prepared the PDF export
 7. Recorded the 5-minute reflection video in my own words
-8. Maintained Git commits and pushed the repository myself
+8. Maintained Git commits and pushed to https://github.com/SeniruR/QA-Automation-ASQA
 
 ## Academic integrity statement
 AI was used as a productivity aid similar to documentation and sample code references. The submitted work reflects my understanding of the framework, test design decisions, and debugging process. I can explain all technical choices during the viva.

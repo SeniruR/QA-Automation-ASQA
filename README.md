@@ -1,5 +1,8 @@
 # OrangeHRM QA Automation – UCSC Take-Home
 
+**Student:** R.P.S.R. Ranasinghe (`22020782`)  
+**Repository:** https://github.com/SeniruR/QA-Automation-ASQA
+
 Selenium + TestNG + Page Object Model automation for the lecturer-approved site:
 
 **https://opensource-demo.orangehrmlive.com/web/index.php/auth/login**
