@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Automation Suite" verbose="1" parallel="false">
+    <test name="Selected Automation Scenarios">
+        <classes>
+            <class name="com.asqa.orangehrm.tests.LoginValidTest"/>
+            <class name="com.asqa.orangehrm.tests.LoginInvalidTest"/>
+            <class name="com.asqa.orangehrm.tests.LogoutTest"/>
+            <class name="com.asqa.orangehrm.tests.PIMSearchEmployeeTest"/>
+            <class name="com.asqa.orangehrm.tests.AdminUserManagementNavigationTest"/>
+        </classes>
+    </test>
+</suite>
