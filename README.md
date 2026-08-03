@@ -45,11 +45,13 @@ docs/        Assignment report content (export to PDF)
 ```
 
 ## Automated scenarios
-1. Valid login  
-2. Invalid login  
-3. Logout  
-4. PIM employee search  
-5. Admin System Users navigation  
+| # | Test class | Manual ID |
+|---|------------|-----------|
+| 1 | `LoginValidTest` | TS-01 |
+| 2 | `LoginInvalidTest` | TS-02 |
+| 3 | `LogoutTest` | TS-04 |
+| 4 | `PIMSearchEmployeeTest` | TS-07 |
+| 5 | `AdminUserManagementNavigationTest` | TS-09 |
 
 ## Documentation for submission
 | Deliverable | Location |

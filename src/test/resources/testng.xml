@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRM Automation Suite" verbose="1" parallel="false">
+    <!-- Five lecturer-selected scenarios mapped from manual TS-01, TS-02, TS-04, TS-07, TS-09 -->
     <test name="Selected Automation Scenarios">
         <classes>
             <class name="com.asqa.orangehrm.tests.LoginValidTest"/>
