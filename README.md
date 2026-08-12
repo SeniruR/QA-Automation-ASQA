@@ -56,9 +56,13 @@ docs/        Assignment report content (export to PDF)
 ## Documentation for submission
 | Deliverable | Location |
 |-------------|----------|
-| Report content (→ PDF) | `docs/ASSIGNMENT_REPORT.md` |
+| PDF report (LaTeX) | `docs/latex/RPSR_Ranasinghe_22020782_QA_Automation.pdf` |
+| Rebuild PDF | `docs/latex/build-pdf.ps1` |
+| Report content (Markdown) | `docs/ASSIGNMENT_REPORT.md` |
 | Manual scenarios | `docs/MANUAL_TEST_SCENARIOS.md` |
-| Debugging challenge | `docs/DEBUGGING_CHALLENGE.md` |
+| Screenshots | `docs/screenshots/` |
+| Debugging evidence | `docs/debugging/` |
+| Framework notes | `docs/FRAMEWORK_DESIGN.md` |
 | AI usage | `AI_USAGE.md` |
 
 ## Config

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Manual Evidence Capture" verbose="1" parallel="false">
+    <test name="Report Screenshots">
+        <classes>
+            <class name="com.asqa.orangehrm.tests.ManualEvidenceTest"/>
+        </classes>
+    </test>
+</suite>

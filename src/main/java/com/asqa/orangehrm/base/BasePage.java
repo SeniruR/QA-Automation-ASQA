@@ -43,4 +43,9 @@ public abstract class BasePage {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
+
+    public void waitForLoadingSpinnersToFinish() {
+        wait.waitForDocumentReady();
+        wait.waitForLoadingSpinnersToFinish();
+    }
 }

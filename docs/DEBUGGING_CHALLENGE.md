@@ -1,51 +1,44 @@
-# Step 7 – Debugging Challenge
+# Step 7 – Debugging Challenge (with evidence)
 
 ## Intentional failure
 
-**Goal:** Demonstrate finding and fixing a broken locator.
-
-### Fault introduced
-In `LoginPage`, the login button locator was temporarily changed from a valid selector:
+**Test:** `LoginValidTest.validLogin_shouldOpenDashboard`  
+**Change in `LoginPage.java`:**
 
 ```java
-private final By loginButton = By.cssSelector("button[type='submit']");
-```
-
-to an **incorrect** selector that does not exist on the page:
-
-```java
+// BROKEN (intentional)
 private final By loginButton = By.cssSelector("button#login-btn-missing");
-```
 
-### Observed failure
-- Test: `LoginValidTest.validLogin_shouldOpenDashboard`
-- Symptom: Test hung then failed with `TimeoutException` / element not clickable / not found while waiting for the login button
-- Screenshot: Saved under `screenshots/` by `BaseTest.tearDown` on failure
-
-### Debugging process
-1. Read the TestNG / Surefire stack trace – failure pointed to `BasePage.click` → `WaitUtils.clickable`
-2. Opened the failure screenshot – login page was visible; button was on screen but not matched
-3. Inspected the live page (Chrome DevTools) – confirmed real button is `button[type='submit']` with class `oxd-button`
-4. Compared intentional locator `#login-btn-missing` vs actual DOM – root cause = **wrong CSS selector**
-5. Restored the correct locator and re-ran `mvn test` – scenario passed
-
-### Root cause
-The automation looked for an element ID that does not exist in OrangeHRM’s login DOM. Explicit wait correctly timed out instead of clicking a wrong element.
-
-### Fix
-Restore:
-
-```java
+// FIXED
 private final By loginButton = By.cssSelector("button[type='submit']");
 ```
 
-### Lesson learned
-- Prefer resilient locators (`name`, `type`, stable attributes) over invented IDs
-- Failure screenshots + wait stack traces speed up diagnosis
-- POM helps: only `LoginPage` needed a one-line fix; tests stayed unchanged
+## Observed failure
 
-### Evidence for report / video
-1. Show failing run with wrong locator (or paste stack trace)
-2. Show DevTools inspection
-3. Show fix commit / corrected line
-4. Show green re-run
+- **Exception:** `TimeoutException` – element not clickable after 20 seconds
+- **Locator:** `By.cssSelector: button#login-btn-missing`
+- **Stack trace:** `WaitUtils.clickable` → `BasePage.click` → `LoginPage.clickLogin`
+
+## Evidence files (in repo)
+
+| File | Description |
+|------|-------------|
+| `docs/debugging/failure-log.txt` | Full Maven/Surefire output from failing run |
+| `docs/debugging/success-log.txt` | Output after locator fix (BUILD SUCCESS) |
+| `docs/debugging/debug_failure_login_button.png` | Screenshot at failure (login page visible, button not found) |
+
+## Debugging process
+
+1. Read Surefire output – pointed to login button wait timeout
+2. Opened failure screenshot – page loaded but automation could not find `#login-btn-missing`
+3. Inspected OrangeHRM login DOM – real button is `button[type='submit']`
+4. Restored correct locator in `LoginPage` only (tests unchanged – POM benefit)
+5. Re-ran `mvn test -Dtest=LoginValidTest` – passed
+
+## Root cause
+
+Invented CSS ID that does not exist on the OrangeHRM login page.
+
+## Lesson learned
+
+Use stable attributes (`type`, `name`) over guessed IDs. Combine stack traces with failure screenshots for faster diagnosis.

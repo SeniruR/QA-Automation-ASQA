@@ -24,10 +24,27 @@ Thumbs.db
 desktop.ini
 
 # Test artifacts
-screenshots/
+/screenshots/
 test-output/
 reports/
 *.log
 
-# Credentials / local overrides (keep template config in repo)
+# Local helpers / packaging (not part of GitHub submission)
+submission/
+scripts/
+docs/VIDEO_SCRIPT.md
+docs/VIVA_PREP.md
+docs/SUBMISSION_CHECKLIST.md
+docs/SUBMISSION_REPORT.html
+
+# LaTeX build artifacts
+docs/latex/*.aux
+docs/latex/*.log
+docs/latex/*.out
+docs/latex/*.toc
+docs/latex/*.fdb_latexmk
+docs/latex/*.fls
+docs/latex/*.synctex.gz
+
+# Credentials / local overrides
 # src/test/resources/config.local.properties

@@ -15,6 +15,7 @@ public class DashboardPage extends BasePage {
     private final By pimMenu = By.xpath("//span[text()='PIM']");
     private final By adminMenu = By.xpath("//span[text()='Admin']");
     private final By leaveMenu = By.xpath("//span[text()='Leave']");
+    private final By dashboardWidgets = By.cssSelector(".orangehrm-dashboard-widget");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -23,6 +24,15 @@ public class DashboardPage extends BasePage {
     public boolean isDashboardDisplayed() {
         return wait.urlContains("dashboard")
                 && waitVisible(dashboardHeader).isDisplayed();
+    }
+
+    /** Wait until dashboard widgets finish AJAX loading (no spinners). */
+    public DashboardPage waitForDashboardFullyLoaded() {
+        isDashboardDisplayed();
+        wait.waitForDocumentReady();
+        wait.waitForLoadingSpinnersToFinish();
+        wait.visible(dashboardWidgets);
+        return this;
     }
 
     public String getHeaderText() {

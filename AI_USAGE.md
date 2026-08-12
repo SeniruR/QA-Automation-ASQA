@@ -30,5 +30,4 @@ AI was used as a productivity aid similar to documentation and sample code refer
 - “Use OrangeHRM demo as the target site”
 - “Generate Selenium TestNG POM structure and five scenarios”
 - “Draft report sections for analysis, manual tests, automation decisions, debugging”
-
-*Update this file if additional AI help is used after the initial scaffold.*
+- “Check about my testcases and its results I have been placed”

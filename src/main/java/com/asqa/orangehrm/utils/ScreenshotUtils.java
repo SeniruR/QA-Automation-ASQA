@@ -16,22 +16,36 @@ import java.time.format.DateTimeFormatter;
  */
 public final class ScreenshotUtils {
 
-    private static final Path SCREENSHOT_DIR = Paths.get("screenshots");
+    private static final Path DEFAULT_DIR = Paths.get("screenshots");
 
     private ScreenshotUtils() {
     }
 
     public static String capture(WebDriver driver, String name) {
+        return capture(driver, DEFAULT_DIR, name, true);
+    }
+
+    /** Saves a named screenshot for manual test evidence (no timestamp). */
+    public static String captureEvidence(WebDriver driver, Path directory, String fileName) {
+        return capture(driver, directory, fileName, false);
+    }
+
+    private static String capture(WebDriver driver, Path directory, String name, boolean addTimestamp) {
         try {
-            Files.createDirectories(SCREENSHOT_DIR);
-            String timestamp = LocalDateTime.now()
-                    .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-            Path target = SCREENSHOT_DIR.resolve(name + "_" + timestamp + ".png");
+            Files.createDirectories(directory);
+            String baseName = name.endsWith(".png") ? name.substring(0, name.length() - 4) : name;
+            Path target = addTimestamp
+                    ? directory.resolve(baseName + "_" + timestamp() + ".png")
+                    : directory.resolve(baseName + ".png");
             byte[] bytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             Files.write(target, bytes);
             return target.toAbsolutePath().toString();
         } catch (IOException e) {
             throw new RuntimeException("Unable to capture screenshot: " + name, e);
         }
+    }
+
+    private static String timestamp() {
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
     }
 }
