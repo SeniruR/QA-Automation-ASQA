@@ -52,6 +52,7 @@
 \fbox{\parbox{0.92\textwidth}{
 \textbf{Website:} \url{https://opensource-demo.orangehrmlive.com/web/index.php/auth/login}\\
 \textbf{GitHub:} \url{https://github.com/SeniruR/QA-Automation-ASQA}\\
+\textbf{Video:} \url{https://drive.google.com/file/d/1LVjVxsYdon5JppayyAF42kQZpBJ2Ra5C/view?usp=sharing}\\
 \textbf{Stack:} Java 17, Selenium WebDriver 4, TestNG, Maven, Page Object Model
 }}
 \end{center}
@@ -60,7 +61,7 @@
 \newpage
 
 % ============================================================
-\section{Step 1 - Selected Website (5 Marks)}
+\section{Selected Website}
 % ============================================================
 
 \begin{table}[H]
@@ -80,7 +81,7 @@ Why this site & Public HRMS demo with Login, Dashboard, PIM, Admin, Leave module
 \noindent\textbf{Demo credentials:} Username \texttt{Admin} / Password \texttt{admin123}
 
 % ============================================================
-\section{Step 2 - Requirement Analysis (10 Marks)}
+\section{Requirement Analysis}
 % ============================================================
 
 \subsection{Application Objectives}
@@ -138,7 +139,7 @@ Credential reset & Login failures & Credentials in \texttt{config.properties} \\
 \end{itemize}
 
 % ============================================================
-\section{Step 3 - Manual Test Scenario Design (15 Marks)}
+\section{Manual Test Scenario Design}
 % ============================================================
 
 \noindent Seventeen manual test scenarios were designed. Summary below; evidence screenshots included for high-priority cases.
@@ -220,7 +221,7 @@ TS-17 & Username only (password empty) & High \\
 \end{figure}
 
 % ============================================================
-\section{Step 4 - Automation Decision (10 Marks)}
+\section{Automation Decision}
 % ============================================================
 
 \subsection{Selected for Automation (5 scenarios)}
@@ -251,7 +252,7 @@ TS-09 & Admin users & Second major module; menu + search validation \\
 \noindent\textbf{Decision rule:} Prefer high priority, stable UI, low data side-effects, reusable smoke coverage.
 
 % ============================================================
-\section{Step 5 - Framework Design (15 Marks)}
+\section{Framework Design}
 % ============================================================
 
 \subsection{Technology Choices}
@@ -300,7 +301,7 @@ src/test/resources/
 \end{enumerate}
 
 % ============================================================
-\section{Step 6 - Automation Development (20 Marks)}
+\section{Automation Development}
 % ============================================================
 
 \begin{table}[H]
@@ -326,7 +327,7 @@ mvn clean test
 \noindent All five automated tests pass successfully on Microsoft Edge.
 
 % ============================================================
-\section{Step 7 - Debugging Challenge (10 Marks)}
+\section{Debugging Challenge}
 % ============================================================
 
 \subsection{Intentional Failure}
@@ -366,10 +367,18 @@ private final By loginButton = By.cssSelector("button#login-btn-missing");
 \textbf{Fix:} Restored \texttt{button[type='submit']}. Evidence logs in \texttt{docs/debugging/}.
 
 % ============================================================
-\section{Step 8 - Reflection Video (10 Marks)}
+\section{Reflection Video}
 % ============================================================
 
-A five-minute screen recording is submitted separately covering:
+A five-minute screen recording explaining the implementation and lessons learned is available at:
+
+\begin{center}
+\url{https://drive.google.com/file/d/1LVjVxsYdon5JppayyAF42kQZpBJ2Ra5C/view?usp=sharing}
+\end{center}
+
+\noindent File name: \texttt{22020782-sqa.mp4}
+
+The recording covers:
 \begin{itemize}[noitemsep]
   \item Project structure walkthrough
   \item Running \texttt{mvn clean test}
@@ -379,20 +388,7 @@ A five-minute screen recording is submitted separately covering:
 \end{itemize}
 
 % ============================================================
-\section{Step 9 - Viva Preparation (5 Marks)}
-% ============================================================
-
-Prepared to explain:
-\begin{itemize}[noitemsep]
-  \item Why Page Object Model separates locators from tests
-  \item Why TestNG for browser lifecycle and suite control
-  \item Explicit vs implicit wait strategy
-  \item Why five scenarios were chosen for automation
-  \item How \texttt{config.properties} improves maintainability
-\end{itemize}
-
-% ============================================================
-\section{Step 10 - GitHub Repository (10 Marks)}
+\section{GitHub Repository}
 % ============================================================
 
 Incremental commit history maintained at:\\

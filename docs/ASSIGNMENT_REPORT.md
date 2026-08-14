@@ -1,4 +1,4 @@
-# UCSC Practical Take-Home Assignment – QA Automation
+﻿# UCSC Practical Take-Home Assignment – QA Automation
 ## OrangeHRM Open Source Demo
 
 **Student:** R.P.S.R. Ranasinghe  
@@ -8,7 +8,7 @@
 
 ---
 
-## Step 1 – Selected Website (5 Marks)
+## Selected Website
 
 | Item | Detail |
 |------|--------|
@@ -21,7 +21,7 @@
 
 ---
 
-## Step 2 – Requirement Analysis (10 Marks)
+## Requirement Analysis
 
 ### 2.1 Application objectives
 OrangeHRM is an open-source Human Resource Management System used to manage employees, leave, time, and system users. The demo allows exploration of HR workflows through a web UI.
@@ -66,7 +66,7 @@ OrangeHRM is an open-source Human Resource Management System used to manage empl
 
 ---
 
-## Step 3 – Manual Test Scenario Design (15 Marks)
+## Manual Test Scenario Design
 
 See full table in `docs/MANUAL_TEST_SCENARIOS.md` (15+ scenarios). Summary:
 
@@ -94,7 +94,7 @@ See full table in `docs/MANUAL_TEST_SCENARIOS.md` (15+ scenarios). Summary:
 
 ---
 
-## Step 4 – Automation Decision (10 Marks)
+## Automation Decision
 
 ### Selected for automation (5 scenarios)
 
@@ -122,7 +122,7 @@ See full table in `docs/MANUAL_TEST_SCENARIOS.md` (15+ scenarios). Summary:
 
 ---
 
-## Step 5 – Framework Design (15 Marks)
+## Framework Design
 
 ### Technology choices
 - **Java 17** – industry-standard language for Selenium courses
@@ -165,7 +165,7 @@ src/test/resources/
 
 ---
 
-## Step 6 – Automation Development (20 Marks)
+## Automation Development
 
 Implemented TestNG classes:
 
@@ -182,7 +182,7 @@ mvn clean test
 
 ---
 
-## Step 7 – Debugging Challenge (10 Marks)
+## Debugging Challenge
 
 Full write-up: `docs/DEBUGGING_CHALLENGE.md`
 
@@ -190,9 +190,14 @@ Full write-up: `docs/DEBUGGING_CHALLENGE.md`
 
 ---
 
-## Step 8 – Reflection Video (10 Marks)
+## Reflection Video
 
-Record a 5-minute screen video covering:
+Five-minute screen recording (implementation and lessons learned):  
+https://drive.google.com/file/d/1LVjVxsYdon5JppayyAF42kQZpBJ2Ra5C/view?usp=sharing
+
+File: `22020782-sqa.mp4`
+
+Covers:
 1. Project structure walkthrough  
 2. Running `mvn test`  
 3. One page object + one test explanation  
@@ -201,13 +206,7 @@ Record a 5-minute screen video covering:
 
 ---
 
-## Step 9 – Viva prep (5 Marks)
-
-Be ready to explain: why POM, why TestNG over JUnit for this suite, wait strategy, why five scenarios were chosen, and how config.properties helps maintainability.
-
----
-
-## Step 10 – GitHub Repository (10 Marks)
+## GitHub Repository
 
 Maintain incremental commits (framework → pages → tests → docs → debug fix). Do not push a single dump commit.
 
